@@ -2,6 +2,9 @@ require 'sinatra/base'
 require_relative 'routes/init'
 
 class MyApp < Sinatra::Base
+  configure do
+    set :app_file, __FILE__
+  end
 
   configure :development do
     enable :logging, :dump_errors, :raise_errors
